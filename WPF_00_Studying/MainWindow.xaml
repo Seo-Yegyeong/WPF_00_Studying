@@ -7,15 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <!-- 
+        
+        -->
         <TabControl>
-            <TabItem Header="settings">
-                
+            <TabItem Header="Student Info" FontWeight="Bold">
+                <StackPanel Margin="20">
+                    <TextBlock Text="hello"></TextBlock>
+                </StackPanel>
             </TabItem>
             <TabItem Header="home">
-                <StackPanel>
-                    <TextBlock Text="Welcome to the home tab!" FontSize="24" Margin="10"/>
-                    <Button Content="Click Me" Width="100" Height="30" Margin="10"/>
-                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- 행과 열 정보 미리 선언 -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!-- 0, 0 칸에 대한 값 설정 -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Name" Margin="5"/>
+                    <!-- 0, 1 -->
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Age" Margin="5" HorizontalAlignment="Center"/>
+                    
+                    <!-- 1, 0 과 1, 1 칸을 합침 -->
+                    <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Check" Margin="5"/>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
