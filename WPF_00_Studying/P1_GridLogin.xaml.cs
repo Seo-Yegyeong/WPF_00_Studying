@@ -30,7 +30,7 @@ namespace WPF_00_Studying
             // Check if the username and password are correct
             if (TextBox_Id.Text == "" || TextBox_Password.Text == "")
             {               
-                MessageBox.Show("아이디와 비밀번호 모두 입력해주세요!");
+                MessageBox.Show("아이디와 비밀번호 모두 입력해주세요!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
