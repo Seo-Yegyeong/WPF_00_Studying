@@ -7,10 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <!-- 
-        
-        -->
         <TabControl>
+
             <TabItem Header="Student Info" FontWeight="Bold">
                 <StackPanel Margin="20">
                     <TextBlock Text="hello"></TextBlock>
@@ -33,10 +31,131 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Name" Margin="5"/>
                     <!-- 0, 1 -->
                     <TextBlock Grid.Row="0" Grid.Column="1" Text="Age" Margin="5" HorizontalAlignment="Center"/>
-                    
+
                     <!-- 1, 0 과 1, 1 칸을 합침 -->
                     <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Check" Margin="5"/>
                 </Grid>
+            </TabItem>
+            <TabItem Header="GroupBox">
+                <GroupBox Header="User Info" Margin="10">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Name: "/>
+                        <TextBox Width="200"/>
+                        <TextBlock Text="Age: "/>
+                        <TextBox Width="200"/>
+                        <!--<Button Content="Button" Click="Button_Click"/>-->
+
+                        <RadioButton x:Name="radioMale" Content="Male" GroupName="gender" IsChecked="True"/>
+                        <RadioButton x:Name="radioFemale" Content="Female" GroupName="gender"/>
+
+                    </StackPanel>
+                </GroupBox>
+            </TabItem>
+
+            <TabItem Header="Slider" Margin="0,0,-91,0">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Volume" FontSize="14" Margin="0,0,0,10"/>
+                    <Slider Minimum="0" Maximum="100" Value="50"/>
+                    <Slider Minimum="0" Maximum="100" TickFrequency="20" IsSnapToTickEnabled="True"/>
+                    <!-- IsSnapToTickEnabled: 눈금에 딱딱 맞춰지게 설정 -->
+
+                    <StackPanel Margin="20">
+                        <!--<Slider x:Name="volumeSlider" Minimum="0" Maximum="100" Value="50" TickFrequency="10" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Width="200" ValueChanged="volumeSlider_ValueChanged"/>-->
+                        <TextBlock x:Name="volumeText" FontSize="20" Margin="0,0,0,10"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Check Box" Margin="0,0,-91,0">
+                <StackPanel Margin="20">
+                    <CheckBox x:Name="checkBoxApple" Content="Apple"/>
+                    <CheckBox x:Name="checkBoxBanana" Content="BananaCheckBox_Checked"/>
+                    <CheckBox x:Name="checkBoxCherry" Content="CheckBox_Checked"/>
+                    <TextBlock Text="textResult" FontSize="26" Margin="10"/>
+                </StackPanel>
+            </TabItem>
+            <!--
+            <TabItem Header="ComboBox">
+                <StackPanel Margin="20">
+                    <TextBlock Text="Select a fruit:" FontSize="25" Margin="0,0,0,10"/>
+                    <ComboBox x:Name="comboFruits" Width="200" SelectionChanged="comboFruits_SelectionChanged" >
+                        <ComboBoxItem Content="Apple"/>
+                        <ComboBoxItem Content="Banana"/>
+                        <ComboBoxItem Content="Orange"/>
+                    </ComboBox>
+                    <TextBlock x:Name="textResult" FontSize="25" Margin="10"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="ListBox" Height="20" VerticalAlignment="Top">
+                <StackPanel Margin="20" HorizontalAlignment="Left">
+                    <TextBlock Text="Choose a color you like: " FontSize="25" Margin="0,0,0,10"/>
+                    <ListBox x:Name="listColors" Height="100" Width="200" SelectionChanged="listColors_SelectionChanged">
+                        <ListBoxItem Content="Skyblue"/>
+                        <ListBoxItem Content="Red"/>
+                        <ListBoxItem Content="Green"/>
+                    </ListBox>
+                    <TextBlock x:Name="textSelected" FontSize="25" Margin="10"/>
+                    <ListBox x:Name="listFruits" SelectionMode="Multiple" SelectionChanged="listFruits_SelectionChanged" >
+                        <ListBoxItem Content="Apple"/>
+                        <ListBoxItem Content="Banana"/>
+                        <ListBoxItem Content="Orange"/>
+                        <ListBoxItem Content="Grapes"/>
+                    </ListBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Data Binding">
+                <ListBox x:Name="listBox">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{}"/>
+                                <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Height="30" Margin="5,0,0,0"/>
+                                
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </TabItem>
+            <TabItem Header="Web">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <WebBrowser x:Name="webBrowser1"/>
+                    <Button x:Name="btnNaver" Content="Move on Naver" Width="100" Margin="0,0,10,0" Click="btnNaver_Click"/>
+                    <Button x:Name="btnBack" Content="Move back" Width="100" Margin="0,0,10,0" Click="btnBack_Click"/>
+                    <Button x:Name="btnForward" Content="Move forward" Width="100" Margin="0,0,10,0" Click="btnForward_Click"/>
+                </StackPanel>
+            </TabItem>
+            -->
+            <TabItem Header="Resource">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="-83,0,0,0">
+
+                    <!-- #1. Resource XAML 버전 -->
+
+                    <Image Source="/Assets/Quakar.png" Margin="0,0,10,0"/>
+                    <Image Source="/Assets/Handong.jpg" Margin="10,0,0,0"/>
+
+                    <!-- #1. Resource C# 버전 -->
+                    <Image x:Name="imgTest" Width="200" Height="200"/>
+                    <!--<Button Content="Show other image" Click="Button_Click_1"/>-->
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Content">
+                <!-- #3. Context XAML 버전 -->
+                <StackPanel>
+                    <Image x:Name="imgTest2" Width="200" Height="200"/>
+                    <!-- #4. Content C#-->
+                    <!--<Button Content="Show other image" Click="Button_Click_2"/>-->
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="ImagePractice">
+                <Button x:Name="btnOpenImage" Content="Open Image" Height="200" Width="400" Click="btnOpenImage_Click">
+                    <Button.Background>
+                        <ImageBrush/>
+                    </Button.Background>
+                </Button>
             </TabItem>
         </TabControl>
     </Grid>
